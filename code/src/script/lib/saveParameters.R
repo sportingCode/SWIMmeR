@@ -1,6 +1,8 @@
 saveParameters <- function(){
   
   parameters = c(input_parameter$dataset,
+                 input_parameter$filename_CTRL,
+                 input_parameter$filename_CASE,
                  input_parameter$paired_ttest,
                  input_parameter$correction_method,
                  input_parameter$threshold_prc_iqr,
@@ -15,7 +17,7 @@ saveParameters <- function(){
                  network$num_node,network$num_edge,
                  switch$num_node,switch$num_edge,nrow(switch$attribute_switch))
   
-  names <- c("dataset","paired_ttest","correction_method",
+  names <- c("dataset","filename_CTRL","filename_CASE","paired_ttest","correction_method",
              "threshold_prc_iqr","threshold_perc_zeros",
              "threshold_fc","threshold_pval_adj","type_correlation",
              "threshold_prc_corr","threshold_correlation","threshold_pval_adj_corr",
