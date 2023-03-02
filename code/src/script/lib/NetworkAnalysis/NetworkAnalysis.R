@@ -50,10 +50,11 @@ NetworkAnalysis <- function(data,checkNetIntegrity,screePlot){
               num_edge = num_edge,
               w_adj = w_adj,
               threshold_corr = threshold_corr,
-              idx = clustering$idx,
               cluster_size = clustering$size,
-              WSS = clustering$WSS, 
-              TWSS = clustering$TWSS)
+              idx = clustering$idx,
+              cluster_connectivity = clustering$cluster_connectivity,
+              cluster_compactness = clustering$cluster_compactness,
+              partition_quality = clustering$partition_quality)
   
   return(res)
   

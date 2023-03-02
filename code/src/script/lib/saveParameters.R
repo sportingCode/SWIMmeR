@@ -15,13 +15,19 @@ saveParameters <- function(){
                  input_parameter$threshold_pval_adj_corr,
                  input_parameter$num_clusters,
                  network$num_node,network$num_edge,
+                 paste(network$cluster_size,collapse = "/"),
+                 paste(network$cluster_connectivity,collapse = "/"),
+                 paste(network$cluster_compactness,collapse = "/"),
+                 network$partition_quality,
                  switch$num_node,switch$num_edge,nrow(switch$attribute_switch))
   
   names <- c("dataset","filename_CTRL","filename_CASE","paired_ttest","correction_method",
              "threshold_prc_iqr","threshold_perc_zeros",
              "threshold_fc","threshold_pval_adj","type_correlation",
              "threshold_prc_corr","threshold_correlation","threshold_pval_adj_corr",
-             "num_clusters","node","edge","node cartography","edge cartography","switch")
+             "num_clusters","node","edge","cluster size","cluster connectivity",
+             "cluster compactness","k-means partition quality",
+             "node cartography","edge cartography","switch")
   
   if(input_parameter$miRNA == "yes"){
     
@@ -42,6 +48,7 @@ saveParameters <- function(){
   
   init_config <- matrix(parameters,N,1)
   
+  colnames(init_config) <- "Parameters"
   rownames(init_config) <- names
   
   save(init_config,file = output_file$filename_parameters)

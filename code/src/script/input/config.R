@@ -1,12 +1,12 @@
 config <- function(){
   
   # for executing SWIMmer launch:
-  # source('~/SWIMmeR/code/src/main.R')
+  # source('~/Documents/SWIMmeR/code/src/main.R')
   
   #################################
   project <- "TCGA"
   dataset <- "brca"
-  miRNA <- "yes"
+  miRNA <- "no"
   
   path <- paste0("project/",project,"/dataset/",dataset)
   #################################
