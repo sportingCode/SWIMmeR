@@ -31,7 +31,6 @@ getSource <- function(){
   source("src/script/lib/NetworkAnalysis/script/network/computeNetworkIntegrity.R")
   source("src/script/lib/NetworkAnalysis/script/network/createWeightedAdjMatrix.R")
   source("src/script/lib/NetworkAnalysis/script/clustering/getClustering.R")
-  source("src/script/lib/NetworkAnalysis/script/clustering/computeClusterConnectivity.R")
   source("src/script/lib/NetworkAnalysis/script/clustering/createClusterMatrix.R")
   source("src/script/lib/NetworkAnalysis/script/figure/getScreePlot.R")
   source("src/script/lib/NetworkAnalysis/script/figure/getNetworkIntegrityPlot.R")

@@ -16,18 +16,16 @@ saveParameters <- function(){
                  input_parameter$num_clusters,
                  network$num_node,network$num_edge,
                  paste(network$cluster_size,collapse = "/"),
-                 paste(network$cluster_connectivity,collapse = "/"),
-                 paste(network$cluster_compactness,collapse = "/"),
-                 network$partition_quality,
-                 switch$num_node,switch$num_edge,nrow(switch$attribute_switch))
+                 paste(network$cluster_score,collapse = "/"),
+                 network$partition_score,switch$num_node,
+                 switch$num_edge,nrow(switch$attribute_switch))
   
   names <- c("dataset","filename_CTRL","filename_CASE","paired_ttest","correction_method",
              "threshold_prc_iqr","threshold_perc_zeros",
              "threshold_fc","threshold_pval_adj","type_correlation",
              "threshold_prc_corr","threshold_correlation","threshold_pval_adj_corr",
-             "num_clusters","node","edge","cluster size","cluster connectivity",
-             "cluster compactness","k-means partition quality",
-             "node cartography","edge cartography","switch")
+             "num_clusters","node","edge","cluster size", "cluster score",
+             "k-means partition score", "node cartography","edge cartography","switch")
   
   if(input_parameter$miRNA == "yes"){
     
