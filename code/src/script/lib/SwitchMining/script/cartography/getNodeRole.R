@@ -12,7 +12,7 @@ getNodeRole <- function(y,z,P){
   region[z < 2.5 & P > 0.625 & P <= 0.8] <- 'R3'
   region[z < 2.5 & P > 0.8] <- 'R4'
   region[z >= 2.5 & P <= 0.3] <- 'R5'
-  region[z >= 2.5 & P > 0.3  && P <= 0.75] <- 'R6'
+  region[z >= 2.5 & P > 0.3  & P <= 0.75] <- 'R6'
   region[z >= 2.5 & P > 0.75] <- 'R7'
   
   type[z < 2.5 & P <= 0.04] <- 'Ultra-peripheral nodes'
@@ -20,7 +20,7 @@ getNodeRole <- function(y,z,P){
   type[z < 2.5 & P > 0.625 & P <= 0.8] <- 'Non-hub connectors'
   type[z < 2.5 & P > 0.8] <- 'Non-hub kinless nodes';
   type[z >= 2.5 & P <= 0.3] <- 'Provincial hubs'
-  type[z >= 2.5 & P > 0.3  && P <= 0.75] <- 'Connector hubs'
+  type[z >= 2.5 & P > 0.3  & P <= 0.75] <- 'Connector hubs'
   type[z >= 2.5 & P > 0.75] <- 'Kinless hubs'
   
   res <- list(hub = hub, region = region, type = type)
