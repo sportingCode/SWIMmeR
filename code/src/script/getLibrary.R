@@ -1,28 +1,33 @@
 getLibrary <- function(){
   
-  library(data.table)
-  library(ggplot2)
-  library(pheatmap)
+  packages_installed <- installed.packages()
   
-  # rcorr
-  library(Hmisc)
+  ######################################
+  # Installing packages from CRAN
   
-  library(igraph)
+  if(!"devtools" %in% packages_installed){install.packages('devtools')}
   
-  # Elbow method
-  library(factoextra)
-  library(NbClust)
+  packages_CRAN <- c("data.table",
+                     "ggplot2",
+                     "pheatmap",
+                     "Hmisc", #rcorr
+                     "igraph",
+                     "factoextra","NbClust", #Elbow method
+                     "RColorBrewer", # Heat Cartography color
+                     "stringi",  # stri_list2matrix
+                     "gridExtra" # save multiple plot (grid.arrange)
+                      )
   
-  # Heat Cartography color
-  library(RColorBrewer)
+  packages_to_install_CRAN <- setdiff(packages_CRAN,packages_installed)
   
-  # stri_list2matrix
-  library(stringi)
+  if( length(packages_to_install_CRAN) > 0 ){
+    devtools::install_cran(packages_to_install_CRAN, upgrade = 'never')
+  }
   
-  # save multiple plot (grid.arrange)
-  library(gridExtra)
+  # Loading installed packages
   
+  invisible(sapply(packages_CRAN,require,character.only = TRUE))
+  ######################################
 }
-
 
 
