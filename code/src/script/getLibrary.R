@@ -10,12 +10,13 @@ getLibrary <- function(){
   packages_CRAN <- c("data.table",
                      "ggplot2",
                      "pheatmap",
-                     "Hmisc", #rcorr
+                     "Hmisc",          # rcorr
                      "igraph",
-                     "factoextra","NbClust", #Elbow method
-                     "RColorBrewer", # Heat Cartography color
-                     "stringi",  # stri_list2matrix
-                     "gridExtra" # save multiple plot (grid.arrange)
+                     "factoextra",     # Elbow method
+                     "NbClust",        # Elbow method
+                     "RColorBrewer",   # Heat Cartography color
+                     "stringi",        # stri_list2matrix
+                     "gridExtra"       # save multiple plot (grid.arrange)
                       )
   
   packages_to_install_CRAN <- setdiff(packages_CRAN,packages_installed)
